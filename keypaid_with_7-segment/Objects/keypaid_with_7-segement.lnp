@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\keypaid_with_7-segement.obj" 
+TO ".\Objects\keypaid_with_7-segement" 
+PRINT(".\Listings\keypaid_with_7-segement.m51")

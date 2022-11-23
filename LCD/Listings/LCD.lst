@@ -1,0 +1,92 @@
+C51 COMPILER V9.54   LCD                                                                   08/31/2022 14:31:34 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN .\Objects\LCD.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE LCD.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\LCD.l
+                    -st) TABS(2) OBJECT(.\Objects\LCD.obj)
+
+line level    source
+
+   1            #include <REGX51.H>
+   2            sbit rs = P1^0;
+   3            sbit rw = P1^1;
+   4            sbit en = P1^2;
+   5            void lcdcmd (unsigned char);
+   6            void lcddat(unsigned char);
+   7            void delay();
+   8            
+   9            void lcdcmd(unsigned char val)
+  10            {
+  11   1          P2=val;
+  12   1          rs=0;
+  13   1          rw=0;
+  14   1          en=1;
+  15   1          delay();
+  16   1          en=0;
+  17   1        }
+  18            void lcddat(unsigned char val)
+  19            {
+  20   1          P2=val;
+  21   1          rs=1;
+  22   1          rw=0;
+  23   1          en=1;
+  24   1          delay();
+  25   1          en=0;
+  26   1        }
+  27            void delay()
+  28            {
+  29   1          unsigned int i,j;
+  30   1          for(i=0;j<=9;i++)
+  31   1        {
+  32   2          for(j=0;j<1275;j++);
+  33   2        }
+  34   1      }
+  35            
+  36          void main()
+  37          {
+  38   1        P2=0x00;
+  39   1        while(1)
+  40   1        {
+  41   2          lcdcmd(0x38); //8-bit mode
+  42   2          delay();
+  43   2          lcdcmd(0x08); //display,couser off
+  44   2          delay();
+  45   2          lcdcmd(0x0C); //display on, couser off
+  46   2          delay();
+  47   2          lcdcmd(0x0E); //display on,couser blink
+  48   2          delay();
+  49   2          
+  50   2          lcdcmd(0x80);
+  51   2          lcddat('M');
+  52   2          delay(); 
+  53   2          
+  54   2          lcdcmd(0x81);
+C51 COMPILER V9.54   LCD                                                                   08/31/2022 14:31:34 PAGE 2   
+
+  55   2          lcddat('E');
+  56   2          delay();
+  57   2          
+  58   2          lcdcmd(0x82);
+  59   2          lcddat('O');
+  60   2          delay();
+  61   2          
+  62   2          lcdcmd(0x83);
+  63   2          lcddat('W');
+  64   2          delay();
+  65   2        }
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    151    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

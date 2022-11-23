@@ -1,0 +1,96 @@
+C51 COMPILER V9.54   SBIT                                                                  08/05/2022 14:33:22 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE SBIT
+OBJECT MODULE PLACED IN .\Objects\SBit.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE SBit.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\SBit
+                    -.lst) TABS(2) OBJECT(.\Objects\SBit.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          int i,j,y;
+   3          sbit red = P1^0;
+   4          sbit yel = P1^1;
+   5          sbit ger = P1^2;
+   6          sbit red1 = P1^3;
+   7          sbit yel1 = P1^4;
+   8          sbit ger1 = P1^5;
+   9          sbit redi = P3^0;
+  10          sbit yeli = P3^1;
+  11          sbit geri = P3^2;
+  12          
+  13          sbit BUT=P2^0;
+  14          sbit but=P2^1;
+  15          sbit buti=P2^2;
+  16          void delay(y)
+  17          {
+  18   1        for(i=0;i<=y;i++)
+  19   1        {
+  20   2          for(j=0;j<=1275;j++);
+  21   2        }
+  22   1      }
+  23          
+  24          void main()
+  25          {
+  26   1        
+  27   1        P1=0x00;
+  28   1        //P2=0x00;
+  29   1        P3=0X00;
+  30   1        while(1)
+  31   1        {
+  32   2          if(BUT==0)
+  33   2          {
+  34   3          red=1;
+  35   3          delay(100);
+  36   3          red=0;
+  37   3          yel=1;
+  38   3          delay(100);
+  39   3          yel=0;
+  40   3          ger=1;
+  41   3          delay(100);
+  42   3          ger=0;
+  43   3          }
+  44   2          if(but==0)
+  45   2          {
+  46   3          
+  47   3           red1=1;
+  48   3          delay(100);
+  49   3          red1=0;
+  50   3          yel1=1;
+  51   3          delay(100);
+  52   3          yel1=0;
+  53   3          ger1=1;
+  54   3          delay(100);
+C51 COMPILER V9.54   SBIT                                                                  08/05/2022 14:33:22 PAGE 2   
+
+  55   3          ger1=0;
+  56   3          }
+  57   2          if(buti==0)
+  58   2          {
+  59   3          redi=1;
+  60   3          delay(100);
+  61   3          redi=0;
+  62   3          yeli=1;
+  63   3          delay(100);
+  64   3          yeli=0;
+  65   3          geri=1;
+  66   3          delay(100);
+  67   3          geri=0;
+  68   3          }
+  69   2        }
+  70   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    135    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

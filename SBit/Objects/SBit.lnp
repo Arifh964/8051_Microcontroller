@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\SBit.obj" 
+TO ".\Objects\SBit" 
+PRINT(".\Listings\SBit.m51")

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Traffic_Light_segment.obj" 
+TO ".\Objects\Traffic_Light_segment" 
+PRINT(".\Listings\Traffic_Light_segment.m51")

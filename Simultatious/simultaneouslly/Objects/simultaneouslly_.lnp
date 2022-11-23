@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\simultaneouslly.obj" 
+TO ".\Objects\simultaneouslly_" 
+PRINT(".\Listings\simultaneouslly_.m51")

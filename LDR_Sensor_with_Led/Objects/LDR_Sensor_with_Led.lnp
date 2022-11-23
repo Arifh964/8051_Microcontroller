@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\LDR_Sensor_with_Led.obj" 
+TO ".\Objects\LDR_Sensor_with_Led" 
+PRINT(".\Listings\LDR_Sensor_with_Led.m51")

@@ -1,0 +1,52 @@
+C51 COMPILER V9.54   LDR_SENSOR_WITH_LED                                                   09/15/2022 12:18:41 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE LDR_SENSOR_WITH_LED
+OBJECT MODULE PLACED IN .\Objects\LDR_Sensor_with_Led.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE LDR_Sensor_with_Led.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(
+                    -.\Listings\LDR_Sensor_with_Led.lst) TABS(2) OBJECT(.\Objects\LDR_Sensor_with_Led.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          int i, j, k;
+   3          sbit LDR = P1^0;
+   4          sbit LED = P1^1;
+   5          
+   6          void delay(y)
+   7          {
+   8   1        for(i=0;i<=y;i++)
+   9   1        {
+  10   2          for(j=0;j<=1275;j++);
+  11   2        }
+  12   1      }
+  13          void main()
+  14          {
+  15   1        P1=0x00;
+  16   1        while(1)
+  17   1        {
+  18   2          if(LDR==1)
+  19   2          {
+  20   3            LED=0;
+  21   3          }
+  22   2          else
+  23   2          {
+  24   3            LED=1;
+  25   3          }
+  26   2        }
+  27   1      }
+  28          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     66    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

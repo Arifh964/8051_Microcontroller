@@ -1,0 +1,85 @@
+C51 COMPILER V9.54   2_MOTOR_WITH_2_SWITCH                                                 09/05/2022 17:06:33 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE 2_MOTOR_WITH_2_SWITCH
+OBJECT MODULE PLACED IN .\Objects\2_Motor_with_2_switch.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 2_Motor_with_2_switch.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\2_Motor_with_2_switch.lst) TABS(2) OBJECT(.\Objects\2_Motor_with_2_switch.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          sbit motorp=P2^0;
+   3          sbit motorn=P2^1;
+   4          sbit motorp1=P2^2;
+   5          sbit motorn2=P2^3;
+   6          sbit sw=P1^0;
+   7          sbit sw1=P1^1;
+   8          
+   9          void frwd()
+  10          {
+  11   1        motorp=1;
+  12   1        motorn=0;
+  13   1        motorp1=1;
+  14   1        motorn2=0;
+  15   1      }
+  16          void bkwrd()
+  17          {
+  18   1        motorp=0;
+  19   1        motorn=1;
+  20   1        motorp1=0;
+  21   1        motorn2=1;
+  22   1      }
+  23          void stop()
+  24          {
+  25   1        motorp=0;
+  26   1        motorn=0;
+  27   1        motorp1=0;
+  28   1        motorn2=0;
+  29   1      }
+  30          void altr()
+  31          {
+  32   1        motorp=1;
+  33   1        motorn=0;
+  34   1        motorp1=0;
+  35   1        motorn2=1;
+  36   1      }
+  37          void main()
+  38          {
+  39   1        P1=P2=0x00;
+  40   1        while(1)
+  41   1        {
+  42   2        if((sw)==1&&(sw1)==0)
+  43   2        {
+  44   3          frwd();
+  45   3        }
+  46   2        else if((sw1)==1&&(sw)==0)
+  47   2        {
+  48   3        bkwrd();
+  49   3        }
+  50   2        else if((sw)==1&&(sw1)==1)
+  51   2        {
+  52   3          altr();
+  53   3        }
+  54   2        else
+C51 COMPILER V9.54   2_MOTOR_WITH_2_SWITCH                                                 09/05/2022 17:06:33 PAGE 2   
+
+  55   2        {
+  56   3          stop();
+  57   3        }
+  58   2       }
+  59   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     79    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,158 @@
+C51 COMPILER V9.54   KEYPAID                                                               09/09/2022 15:21:56 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE KEYPAID
+OBJECT MODULE PLACED IN .\Objects\Keypaid.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Keypaid.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\K
+                    -eypaid.lst) TABS(2) OBJECT(.\Objects\Keypaid.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          sbit R1=P1^0;
+   3          sbit R2=P1^1;
+   4          sbit R3=P1^2;
+   5          sbit R4=P1^3;
+   6          
+   7          sbit C1=P1^4;
+   8          sbit C2=P1^5;
+   9          sbit C3=P1^6;
+  10          
+  11          sbit RS=P2^0;
+  12          sbit RW=P2^1;
+  13          sbit EN=P2^2;
+  14          
+  15          sfr LCD=0xA0;
+  16          void lcdcmd(unsigned char);
+  17          void lcddat(unsigned char);
+  18          void delay();
+  19          void delay1();
+  20          void lcdcmd(unsigned char val)
+  21          {
+  22   1        P3=val;
+  23   1        RS=0;
+  24   1        RW=0;
+  25   1        EN=1;
+  26   1        delay();
+  27   1        EN=0;
+  28   1      }
+  29          void lcddat(unsigned char val)
+  30          {
+  31   1        P3=val;
+  32   1        RS=1;
+  33   1        RW=0;
+  34   1        EN=1;
+  35   1        delay();
+  36   1        EN=0;
+  37   1      }
+  38           void delay()
+  39           {
+  40   1         unsigned int i;
+  41   1         for(i=0;i<1200;i++);
+  42   1       }
+  43           void delay1()
+  44           {
+  45   1         unsigned int j,k;
+  46   1         for(j=0;j<200;j++)
+  47   1         for(k=0;k<200;k++);
+  48   1       }
+  49           void main()
+  50           {
+  51   1         P2=0X00;
+  52   1         lcdcmd(0X38);
+  53   1         delay();
+  54   1         lcdcmd(0X01);
+C51 COMPILER V9.54   KEYPAID                                                               09/09/2022 15:21:56 PAGE 2   
+
+  55   1         delay();
+  56   1         lcdcmd(0X10);
+  57   1         delay();
+  58   1         lcdcmd(0X0C);
+  59   1         delay();
+  60   1         lcdcmd(0X81);
+  61   1         delay();
+  62   1         while(1)
+  63   1         {
+  64   2           R1=0;
+  65   2           
+  66   2           if(C1==0)
+  67   2           {
+  68   3             lcddat('1');
+  69   3             delay();
+  70   3             delay1();
+  71   3           }
+  72   2           if(C2==0)
+  73   2           {
+  74   3             lcddat('2');
+  75   3             delay();
+  76   3             delay1();
+  77   3           }
+  78   2           if(C3==0)
+  79   2           {
+  80   3             lcddat('6');
+  81   3             delay();
+  82   3             delay1();
+  83   3           }
+  84   2           R2=1;
+  85   2           R3=0;
+  86   2           if(C1==0)
+  87   2           {
+  88   3             lcddat('7');
+  89   3             delay();
+  90   3             delay1();
+  91   3           }
+  92   2           if(C2==0)
+  93   2           {
+  94   3             lcddat('8');
+  95   3             delay();
+  96   3             delay1();
+  97   3           }
+  98   2           if(C3==0)
+  99   2           {
+ 100   3             lcddat('9');
+ 101   3             delay();
+ 102   3             delay1();
+ 103   3           }
+ 104   2           R3=1;
+ 105   2           R4=0;
+ 106   2           if(C1==0)
+ 107   2           {
+ 108   3             lcddat('*');
+ 109   3             delay();
+ 110   3             delay1();
+ 111   3           }
+ 112   2           if(C2==0)
+ 113   2           {
+ 114   3             lcddat('0');
+ 115   3             delay();
+ 116   3             delay1();
+C51 COMPILER V9.54   KEYPAID                                                               09/09/2022 15:21:56 PAGE 3   
+
+ 117   3           }
+ 118   2           if(C3==0)
+ 119   2           {
+ 120   3             lcddat('#');
+ 121   3             delay();
+ 122   3             delay1();
+ 123   3           }
+ 124   2           R4=1;
+ 125   2         }
+ 126   1       }
+ 127                 
+ 128               
+ 129                 
+ 130          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    253    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Metro_LCD.obj" 
+TO ".\Objects\Metro_LCD" 
+PRINT(".\Listings\Metro_LCD.m51")

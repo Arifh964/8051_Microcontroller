@@ -1,0 +1,41 @@
+C51 COMPILER V9.54   SIMULTANEOUSLLY                                                       07/28/2022 17:25:18 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE SIMULTANEOUSLLY
+OBJECT MODULE PLACED IN .\Objects\simultaneouslly.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE simultaneouslly.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\simultaneouslly.lst) TABS(2) OBJECT(.\Objects\simultaneouslly.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          int i,j,y,k;
+   3          void delay(y)
+   4          {
+   5   1        for(i=0;i<=y;i++)
+   6   1        {
+   7   2            for(j=0;j<=1275;j++);
+   8   2        }
+   9   1      }
+  10          void main()
+  11          {
+  12   1        P1=0xFF;
+  13   1        delay(25);
+  14   1        P1=0x00;
+  15   1        delay(25);
+  16   1        
+  17   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     68    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

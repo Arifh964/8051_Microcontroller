@@ -1,0 +1,254 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/04/2022  22:42:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Traffic_Light_And_Different_Time_with_Segment.obj TO .\Obje
+>> cts\Traffic_Light_And_Different_Time_with_Segment PRINT (.\Listings\Traffic_Light_And_Different_Time_with_Segment.m51
+>> )
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\Traffic_Light_And_Different_Time_with_Segment.obj (TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\Traffic_Light_And_Different_Time_with_Segment (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            DATA    001CH     000CH     UNIT         ?DT?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            IDATA   0028H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0063H     UNIT         ?PR?SEG?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    0959H     0063H     UNIT         ?PR?SEGI?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    09BCH     0063H     UNIT         ?PR?SEGII?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    0A1FH     003DH     UNIT         ?PR?_DELAY?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    0A5CH     003CH     UNIT         ?CO?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    0A98H     0021H     UNIT         ?PR?MAIN?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+            CODE    0AB9H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Traffic_Light_And_Different_Time_with_Segment (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?TRAFFIC_LIGHT_AND_DIFFERENT_...
+
+?PR?MAIN?TRAFFIC_LIGHT_AND_DIFFERENT_...         -----    -----
+  +--> ?PR?SEG?TRAFFIC_LIGHT_AND_DIFFERENT_T...
+  +--> ?PR?SEGI?TRAFFIC_LIGHT_AND_DIFFERENT_...
+  +--> ?PR?SEGII?TRAFFIC_LIGHT_AND_DIFFERENT...
+
+?PR?SEG?TRAFFIC_LIGHT_AND_DIFFERENT_T...         0008H    0014H
+  +--> ?CO?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_...
+  +--> ?PR?_DELAY?TRAFFIC_LIGHT_AND_DIFFEREN...
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/04/2022  22:42:02  PAGE 2
+
+
+
+?PR?SEGI?TRAFFIC_LIGHT_AND_DIFFERENT_...         0008H    0014H
+  +--> ?CO?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_...
+  +--> ?PR?_DELAY?TRAFFIC_LIGHT_AND_DIFFEREN...
+
+?PR?SEGII?TRAFFIC_LIGHT_AND_DIFFERENT...         0008H    0014H
+  +--> ?CO?TRAFFIC_LIGHT_AND_DIFFERENT_TIME_...
+  +--> ?PR?_DELAY?TRAFFIC_LIGHT_AND_DIFFEREN...
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Traffic_Light_And_Different_Time_with_Segment (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0AB9H         SEGMENT       ?C_C51STARTUP
+  I:0028H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0ABCH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0AB9H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0AB9H         LINE#         133
+  C:0ABBH         LINE#         134
+  C:0ABCH         LINE#         135
+  C:0ABDH         LINE#         136
+  C:0ABFH         LINE#         185
+  C:0AC2H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0A28H         PUBLIC        _delay
+  C:09BCH         PUBLIC        segii
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/04/2022  22:42:02  PAGE 3
+
+
+  C:0A98H         PUBLIC        main
+  C:0959H         PUBLIC        segi
+  B:0090H.0       PUBLIC        red
+  B:0090H.2       PUBLIC        ger
+  C:08F6H         PUBLIC        seg
+  C:0A5CH         SYMBOL        _?ix1000
+  C:0A70H         SYMBOL        _?ix1001
+  C:0A84H         SYMBOL        _?ix1002
+  B:0090H.1       PUBLIC        yel
+  D:001CH         PUBLIC        i
+  D:001EH         PUBLIC        j
+  D:0020H         PUBLIC        k
+  D:0022H         PUBLIC        l
+  D:0024H         PUBLIC        y
+  D:0026H         PUBLIC        z
+  C:0A1FH         SYMBOL        L?0042
+  -------         PROC          L?0041
+  -------         ENDPROC       L?0041
+  C:0A1FH         SYMBOL        L?0042
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        y
+  C:0A28H         LINE#         7
+  C:0A28H         LINE#         8
+  C:0A28H         LINE#         9
+  C:0A3CH         LINE#         10
+  C:0A3CH         LINE#         11
+  C:0A51H         LINE#         12
+  C:0A5BH         LINE#         13
+  -------         ENDPROC       _DELAY
+  -------         PROC          SEG
+  -------         DO            
+  D:0008H         SYMBOL        led
+  -------         ENDDO         
+  C:08F6H         LINE#         15
+  C:08F6H         LINE#         16
+  C:08F6H         LINE#         17
+  C:0909H         LINE#         19
+  C:090EH         LINE#         20
+  C:0912H         LINE#         21
+  C:0912H         LINE#         22
+  C:0918H         LINE#         23
+  C:091BH         LINE#         24
+  C:0920H         LINE#         25
+  C:0920H         LINE#         26
+  C:092BH         LINE#         27
+  C:0932H         LINE#         28
+  C:0945H         LINE#         29
+  C:0958H         LINE#         30
+  C:0958H         LINE#         31
+  -------         ENDPROC       SEG
+  -------         PROC          SEGI
+  -------         DO            
+  D:0008H         SYMBOL        led
+  -------         ENDDO         
+  C:0959H         LINE#         33
+  C:0959H         LINE#         34
+  C:0959H         LINE#         35
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/04/2022  22:42:02  PAGE 4
+
+
+  C:096CH         LINE#         37
+  C:0971H         LINE#         38
+  C:0975H         LINE#         39
+  C:0975H         LINE#         40
+  C:097BH         LINE#         41
+  C:097EH         LINE#         42
+  C:0983H         LINE#         43
+  C:0983H         LINE#         44
+  C:098EH         LINE#         45
+  C:0995H         LINE#         46
+  C:09A8H         LINE#         47
+  C:09BBH         LINE#         48
+  C:09BBH         LINE#         49
+  -------         ENDPROC       SEGI
+  -------         PROC          SEGII
+  -------         DO            
+  D:0008H         SYMBOL        led
+  -------         ENDDO         
+  C:09BCH         LINE#         51
+  C:09BCH         LINE#         52
+  C:09BCH         LINE#         53
+  C:09CFH         LINE#         55
+  C:09D4H         LINE#         56
+  C:09D8H         LINE#         57
+  C:09D8H         LINE#         58
+  C:09DEH         LINE#         59
+  C:09E1H         LINE#         60
+  C:09E6H         LINE#         61
+  C:09E6H         LINE#         62
+  C:09F1H         LINE#         63
+  C:09F8H         LINE#         64
+  C:0A0BH         LINE#         65
+  C:0A1EH         LINE#         66
+  C:0A1EH         LINE#         67
+  -------         ENDPROC       SEGII
+  -------         PROC          MAIN
+  C:0A98H         LINE#         69
+  C:0A98H         LINE#         70
+  C:0A98H         LINE#         71
+  C:0A9BH         LINE#         72
+  C:0A9BH         LINE#         73
+  C:0A9BH         LINE#         74
+  C:0A9DH         LINE#         75
+  C:0AA0H         LINE#         76
+  C:0AA2H         LINE#         78
+  C:0AA4H         LINE#         79
+  C:0AA7H         LINE#         80
+  C:0AA9H         LINE#         82
+  C:0AABH         LINE#         83
+  C:0AAEH         LINE#         84
+  C:0AB0H         LINE#         86
+  C:0AB2H         LINE#         87
+  C:0AB5H         LINE#         88
+  C:0AB7H         LINE#         89
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TRAFFIC_LIGHT_AND_DIFFERENT_TIME_WITH_SEG
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/04/2022  22:42:02  PAGE 5
+
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 01D2H BYTE (22%) *
+******************************************************************************
+
+Program Size: data=41.0 xdata=0 code=712
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

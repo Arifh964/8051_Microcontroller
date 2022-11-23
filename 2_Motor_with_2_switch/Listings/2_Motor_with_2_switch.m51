@@ -1,0 +1,185 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/05/2022  17:06:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\2_Motor_with_2_switch.obj TO .\Objects\2_Motor_with_2_switc
+>> h PRINT (.\Listings\2_Motor_with_2_switch.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\2_Motor_with_2_switch.obj (2_MOTOR_WITH_2_SWITCH)
+
+
+LINK MAP OF MODULE:  .\Objects\2_Motor_with_2_switch (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     002BH     UNIT         ?PR?MAIN?2_MOTOR_WITH_2_SWITCH
+            CODE    082BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0837H     0009H     UNIT         ?PR?FRWD?2_MOTOR_WITH_2_SWITCH
+            CODE    0840H     0009H     UNIT         ?PR?BKWRD?2_MOTOR_WITH_2_SWITCH
+            CODE    0849H     0009H     UNIT         ?PR?STOP?2_MOTOR_WITH_2_SWITCH
+            CODE    0852H     0009H     UNIT         ?PR?ALTR?2_MOTOR_WITH_2_SWITCH
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\2_Motor_with_2_switch (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?2_MOTOR_WITH_2_SWITCH
+
+?PR?MAIN?2_MOTOR_WITH_2_SWITCH
+  +--> ?PR?FRWD?2_MOTOR_WITH_2_SWITCH
+  +--> ?PR?BKWRD?2_MOTOR_WITH_2_SWITCH
+  +--> ?PR?ALTR?2_MOTOR_WITH_2_SWITCH
+  +--> ?PR?STOP?2_MOTOR_WITH_2_SWITCH
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2_Motor_with_2_switch (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2022  17:06:38  PAGE 2
+
+
+  C:082BH         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:082EH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:082BH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:082BH         LINE#         133
+  C:082DH         LINE#         134
+  C:082EH         LINE#         135
+  C:082FH         LINE#         136
+  C:0831H         LINE#         185
+  C:0834H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        2_MOTOR_WITH_2_SWITCH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:0090H.1       PUBLIC        sw1
+  C:0840H         PUBLIC        bkwrd
+  B:00A0H.1       PUBLIC        motorn
+  B:00A0H.0       PUBLIC        motorp
+  C:0800H         PUBLIC        main
+  C:0852H         PUBLIC        altr
+  C:0837H         PUBLIC        frwd
+  C:0849H         PUBLIC        stop
+  B:00A0H.3       PUBLIC        motorn2
+  B:00A0H.2       PUBLIC        motorp1
+  B:0090H.0       PUBLIC        sw
+  -------         PROC          FRWD
+  C:0837H         LINE#         9
+  C:0837H         LINE#         10
+  C:0837H         LINE#         11
+  C:0839H         LINE#         12
+  C:083BH         LINE#         13
+  C:083DH         LINE#         14
+  C:083FH         LINE#         15
+  -------         ENDPROC       FRWD
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2022  17:06:38  PAGE 3
+
+
+  -------         PROC          BKWRD
+  C:0840H         LINE#         16
+  C:0840H         LINE#         17
+  C:0840H         LINE#         18
+  C:0842H         LINE#         19
+  C:0844H         LINE#         20
+  C:0846H         LINE#         21
+  C:0848H         LINE#         22
+  -------         ENDPROC       BKWRD
+  -------         PROC          STOP
+  C:0849H         LINE#         23
+  C:0849H         LINE#         24
+  C:0849H         LINE#         25
+  C:084BH         LINE#         26
+  C:084DH         LINE#         27
+  C:084FH         LINE#         28
+  C:0851H         LINE#         29
+  -------         ENDPROC       STOP
+  -------         PROC          ALTR
+  C:0852H         LINE#         30
+  C:0852H         LINE#         31
+  C:0852H         LINE#         32
+  C:0854H         LINE#         33
+  C:0856H         LINE#         34
+  C:0858H         LINE#         35
+  C:085AH         LINE#         36
+  -------         ENDPROC       ALTR
+  -------         PROC          MAIN
+  C:0800H         LINE#         37
+  C:0800H         LINE#         38
+  C:0800H         LINE#         39
+  C:0805H         LINE#         40
+  C:0805H         LINE#         41
+  C:0805H         LINE#         42
+  C:080BH         LINE#         43
+  C:080BH         LINE#         44
+  C:080EH         LINE#         45
+  C:0810H         LINE#         46
+  C:0816H         LINE#         47
+  C:0816H         LINE#         48
+  C:0819H         LINE#         49
+  C:081BH         LINE#         50
+  C:0821H         LINE#         51
+  C:0821H         LINE#         52
+  C:0824H         LINE#         53
+  C:0826H         LINE#         55
+  C:0826H         LINE#         56
+  C:0829H         LINE#         57
+  C:0829H         LINE#         58
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        2_MOTOR_WITH_2_SWITCH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005EH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=94
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2022  17:06:38  PAGE 4
+
+
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

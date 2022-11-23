@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Keypaid.obj" 
+TO ".\Objects\KEYPAID" 
+PRINT(".\Listings\KEYPAID.m51")

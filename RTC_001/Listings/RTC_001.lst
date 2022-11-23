@@ -1,0 +1,101 @@
+C51 COMPILER V9.54   RTC_001                                                               09/14/2022 12:38:29 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE RTC_001
+OBJECT MODULE PLACED IN .\Objects\RTC_001.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE RTC_001.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\R
+                    -TC_001.lst) TABS(2) OBJECT(.\Objects\RTC_001.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          sbit SCL=P2^5;
+   4          sbit SDA=P2^6;
+   5          
+   6          void start();
+   7          void write(unsigned char);
+   8          void read();
+   9          void ack();
+  10          void delay(unsigned char);
+  11          
+  12          void main()
+  13          {
+  14   1        int sec;
+  15   1        start();
+  16   1        write(0xA3);// slave address in read mode//
+  17   1        read();
+  18   1        ack();
+  19   1        sec = value;
+*** ERROR C202 IN LINE 19 OF RTC_001.c: 'value': undefined identifier
+  20   1      }
+  21          
+  22          void start()
+  23          {
+  24   1        SDA=1; //processing the data//
+  25   1        SCL=1; //clock is high//
+  26   1        delay(100);
+  27   1        SDA=0; //sent the data//
+  28   1        delay(100);
+  29   1        SCL=0; //clock signal is low//
+  30   1      }
+  31          
+  32          void write(unsigned char d)
+  33          {
+  34   1        unsigned char k,j=0×80;
+*** ERROR C100 IN LINE 34 OF RTC_001.c: unprintable character 0xD7 skipped
+*** ERROR C251 IN LINE 34 OF RTC_001.c: illegal octal digit
+  35   1        for(k=0;k<8;k++)
+  36   1        {
+  37   2          SDA=(d&j);
+  38   2          J=j>>1;
+*** ERROR C202 IN LINE 38 OF RTC_001.c: 'J': undefined identifier
+  39   2          SCL=1;
+  40   2          delay(4);
+  41   2          SCL=0;
+  42   2        }
+  43   1        SDA=1;
+  44   1        SCL=1;
+  45   1        delay(2);
+  46   1        c=SDA;
+*** ERROR C202 IN LINE 46 OF RTC_001.c: 'c': undefined identifier
+  47   1        delay(2);
+  48   1        SCL=0;
+  49   1      }
+C51 COMPILER V9.54   RTC_001                                                               09/14/2022 12:38:29 PAGE 2   
+
+  50          
+  51          void delay(int p)
+  52          {
+  53   1        unsigned int a,b;
+  54   1        For(a=0;a<255;a++); //delay function//
+  55   1        For(b=0;b<p;b++);
+  56   1      }
+  57          
+  58          void read ()
+  59          {
+  60   1        Unsigned char j, z=0×00, q=0×80;
+  61   1        SDA=1;
+  62   1        for(j=0;j<8;j++)
+  63   1        {
+  64   2          SCL=1;
+  65   2          delay(100);
+  66   2          flag=SDA;
+  67   2        if(flag==1)
+  68   2          {
+  69   3            z=(z|q);
+  70   3            q=q>>1;
+  71   3            delay (100);
+  72   3            SCL=0;
+  73   3          }
+  74   2        }
+  75   1      }
+  76          void ack()
+  77          {
+  78   1        SDA=0; //SDA line goes to low//
+  79   1        SCL=1; //clock is high to low//
+  80   1        delay(100);
+  81   1        SCL=0;
+  82   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  5 ERROR(S)
